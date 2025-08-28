@@ -2,6 +2,45 @@ Arrays & Strings
 --------------------
 Two Sum (Easy) - LeetCode #1
 
+=>
+let numsInput = prompt("Enter the nums:"); // e.g. [2,7,11,15]
+let target = parseInt(prompt("Enter the target value:")); // e.g. 9
+
+
+// let numsInput = prompt("Enter the nums");//1,2,3
+// let target = prompt("Enter the target value:");
+
+// let nums = numsInput.split(',').map(Number);
+
+
+
+let nums = numsInput.replace('[', '').replace(']', '').split(',').map(Number);
+
+function twoSumSimple(nums, target) {
+    for (let i = 0; i < nums.length; i++) {
+        console.log("nums[i]",nums[i])
+        for (let j = i + 1; j < nums.length; j++) {
+            console.log("nums[jj",nums[j])
+            if (nums[i] + nums[j] === target) {
+                return [i, j];
+            }
+        }
+    }
+    return null; 
+}
+
+let result = twoSumSimple(nums, target);
+
+if (result) {
+    console.log("Indices found:", result);
+} else {
+    console.log("No two numbers found that sum up to the target.");
+}
+
+
+
+
+
 Best Time to Buy and Sell Stock (Easy) - LeetCode #121
 
 Product of Array Except Self (Medium) - LeetCode #238
@@ -62,5 +101,6 @@ Sorting & Searching
 Merge Intervals (Medium) - LeetCode #56
 
 Search in Rotated Sorted Array (Medium) - LeetCode #33
+
 
 Kth Largest Element in an Array (Medium) - LeetCode #215
