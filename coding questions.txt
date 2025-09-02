@@ -1,6 +1,6 @@
 Arrays & Strings
 --------------------
-Two Sum (Easy) - LeetCode #1
+1.Two Sum (Easy) - LeetCode #1
 
 =>
 let numsInput = prompt("Enter the nums:"); // e.g. [2,7,11,15]
@@ -38,14 +38,45 @@ if (result) {
 }
 
 
+2.Given an array of integers nums and an integer k, return the total number of continuous subarrays whose sum equals to k. 
+ Example: Input: nums = [1,1,1], k = 2 Output: 2 Explanation: The subarrays [1,1] and [1,1] sum to 2.
+
+function checkSum(nums, k) {
+    let count = 0;
+    let sum = 0;
+    let map = new Map();
+    
+
+    map.set(0, 1);
+    
+    for (let num of nums) {
+        sum += num;
+        
+ 
+        if (map.has(sum - k)) {
+            count += map.get(sum - k);
+        }
+        
+        map.set(sum, (map.get(sum) || 0) + 1);
+    }
+    
+    return count;
+}
+
+var nums = prompt("Enter the array (comma-separated):").split(",").map(Number);
+var k = parseInt(prompt("Enter the k value:"));
+
+let result = checkSum(nums, k);
+console.log("Number of subarrays whose sum equals to", k, "is:", result);
 
 
 
-Best Time to Buy and Sell Stock (Easy) - LeetCode #121
 
-Product of Array Except Self (Medium) - LeetCode #238
+3.Best Time to Buy and Sell Stock (Easy) - LeetCode #121
 
-Longest Substring Without Repeating Characters (Medium) - LeetCode #3
+4.Product of Array Except Self (Medium) - LeetCode #238
+
+5.Longest Substring Without Repeating Characters (Medium) - LeetCode #3
 
 --------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
@@ -104,3 +135,4 @@ Search in Rotated Sorted Array (Medium) - LeetCode #33
 
 
 Kth Largest Element in an Array (Medium) - LeetCode #215
+
