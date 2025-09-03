@@ -68,14 +68,57 @@ let result = checkSum(nums, k);
 console.log("Number of subarrays whose sum equals to", k, "is:", result);
 
 
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+4. Write a function that takes a string as input and returns the longest substring without repeating characters.
+Input: "abcabcbb"
+Output: "abc"
+
+Input: "bbbbb"
+Output: "b"
+
+Input: "pwwkew"
+Output: "wke"
+
+function longestUniqueSubstring(s) {
+    let longest = "";
+
+    for (let i = 0; i < s.length; i++) {
+        let current = "";
+
+        for (let j = i; j < s.length; j++) {
+            if (current.includes(s[j])) {
+                break;
+            }
+            current += s[j];
+        }
+
+        if (current.length > longest.length) {
+            longest = current;
+        }
+    }
+
+    return longest;
+}
+
+// Take input from user using prompt
+let inputString = prompt("Enter a string:");
+let result = longestUniqueSubstring(inputString);
+console.log("Longest unique substring is:", result);
 
 
 
-3.Best Time to Buy and Sell Stock (Easy) - LeetCode #121
 
-4.Product of Array Except Self (Medium) - LeetCode #238
 
-5.Longest Substring Without Repeating Characters (Medium) - LeetCode #3
+
+
+
+
+4.Best Time to Buy and Sell Stock (Easy) - LeetCode #121
+
+5.Product of Array Except Self (Medium) - LeetCode #238
+
+6.Longest Substring Without Repeating Characters (Medium) - LeetCode #3
 
 --------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
@@ -134,6 +177,7 @@ Search in Rotated Sorted Array (Medium) - LeetCode #33
 
 
 Kth Largest Element in an Array (Medium) - LeetCode #215
+
 
 
 
