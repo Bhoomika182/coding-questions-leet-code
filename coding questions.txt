@@ -106,13 +106,7 @@ let inputString = prompt("Enter a string:");
 let result = longestUniqueSubstring(inputString);
 console.log("Longest unique substring is:", result);
 
-
-
-
-
-
-
-
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 4.Best Time to Buy and Sell Stock (Easy) - LeetCode #121
 
@@ -177,6 +171,7 @@ Search in Rotated Sorted Array (Medium) - LeetCode #33
 
 
 Kth Largest Element in an Array (Medium) - LeetCode #215
+
 
 
 
