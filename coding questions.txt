@@ -112,6 +112,28 @@ console.log("Longest unique substring is:", result);
 
 5.Product of Array Except Self (Medium) - LeetCode #238
 
+let nums = prompt("Enter the array of numbers:");
+let arr = nums.replace('[','').replace(']','').split(",").map(Number);
+
+let result = [];
+
+for (let i = 0; i < arr.length; i++) {
+    let product = 1;
+    for (let j = 0; j < arr.length; j++) {
+        if (i !== j) {
+            product *= arr[j];
+        }
+    }
+    result.push(product);
+}
+
+console.log("Answer:", result);
+
+------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 6.Longest Substring Without Repeating Characters (Medium) - LeetCode #3
 
 --------------------------------------------------------------------------------------------------------------
@@ -171,6 +193,7 @@ Search in Rotated Sorted Array (Medium) - LeetCode #33
 
 
 Kth Largest Element in an Array (Medium) - LeetCode #215
+
 
 
 
