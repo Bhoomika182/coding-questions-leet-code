@@ -136,6 +136,39 @@ console.log("Answer:", result);
 
 6.Longest Substring Without Repeating Characters (Medium) - LeetCode #3
 
+
+let str = prompt("Enter a string:");
+let maxLength = 0;
+
+for (let i = 0; i < str.length; i++) {
+    let temp = "";
+
+    for (let j = i; j < str.length; j++) {
+        // Check if str[j] is already in temp
+        let found = false;
+        for (let k = 0; k < temp.length; k++) {
+            if (temp[k] === str[j]) {
+                found = true;
+                break;
+            }
+        }
+
+        if (found) {
+            break;
+        } else {
+            temp += str[j]; // add the character
+        }
+    }
+
+    // update maxLength if longer substring is found
+    if (temp.length > maxLength) {
+        maxLength = temp.length;
+    }
+}
+
+console.log("Length of longest substring without repeating characters:", maxLength);
+
+
 --------------------------------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------------------------------
 
@@ -193,6 +226,7 @@ Search in Rotated Sorted Array (Medium) - LeetCode #33
 
 
 Kth Largest Element in an Array (Medium) - LeetCode #215
+
 
 
 
